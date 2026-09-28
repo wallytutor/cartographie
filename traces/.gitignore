@@ -1,0 +1,8 @@
+# Ignore user sources, but keep sample:
+sources/*.gpx
+!sources/sample.gpx
+
+# Ignore user outputs, but keep sample:
+output/*.html
+output/*.gpx
+!output/sample*.gpx
