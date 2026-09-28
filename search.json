@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cartographie",
+    "section": "",
+    "text": "1 Cartographie",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Cartographie</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#contenus",
+    "href": "index.html#contenus",
+    "title": "Cartographie",
+    "section": "1.1 Contenus",
+    "text": "1.1 Contenus\n\nOruxmaps\nTraces GPX",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Cartographie</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#liens-utiles",
+    "href": "index.html#liens-utiles",
+    "title": "Cartographie",
+    "section": "1.2 Liens utiles",
+    "text": "1.2 Liens utiles\n\nGPX Studio\nGPS Visualizer",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Cartographie</span>"
+    ]
+  },
+  {
+    "objectID": "oruxmaps/README.html",
+    "href": "oruxmaps/README.html",
+    "title": "2  OruxMaps",
+    "section": "",
+    "text": "2.1 Introduction\nCe répertoire contient des notes et des ressources pour l’ajout de cartes IGN sur OruxMaps. Lisez attentivement jusqu’à la fin avant de commencer à apporter des modifications.\nPour ajouter des cartes IGN sur OruxMaps, il nous faut ajouter des entrées &lt;onlinemapsource&gt; au fichier onlinemapsources.xml à la racine du système Android. Cela est souvent problématique car il faut accéder à des fichiers restreints sur son téléphone. Il est donc conseillé de le faire depuis un ordinateur avec le téléphone branché en mode de transfert de fichiers, où le système Android n’est pas en mesure d’empêcher l’accès à ces fichiers.\nLe fichier onlinemapsources.xml se trouve sous Android/data/com.orux.oruxmapsDonate/files/oruxmaps/mapfiles dans les configurations de l’application. Un fichier XML est un fichier texte avec des balises (tags) qui structurent les données de façon à les rendre facilement lisibles par un logiciel. Étant un fichier texte, nous pouvons utiliser le Bloc-notes classique de Windows pour le lire et le modifier. Pour les personnes plus à l’aise avec la programmation, un éditeur de code avec coloration syntaxique est préférable, permettant d’identifier facilement les erreurs.\nLa structure de onlinemapsources.xml est très simple : en haut, nous avons un en-tête &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt; qui indique au logiciel qui le lit qu’il s’agit d’un fichier XML et quel encodage utiliser. Ensuite, nous avons une balise racine onlinemapsources qui englobe toutes les autres entrées sous forme de liste. Nous pouvons ajouter des commentaires au fichier en encadrant un bloc de texte avec &lt;!-- ... --&gt;, comme dans l’exemple ci-dessous :\nLe plus important lors de l’ajout de nouvelles entrées est que chaque carte doit avoir un identifiant (uid) unique. La numérotation des uid est arbitraire (bonne pratique : utiliser une suite d’entiers). Si vous le fusionnez avec un autre fichier, veillez à adapter les uid au besoin, sans quoi OruxMaps ne pourra pas les identifier et ne les affichera pas.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>OruxMaps</span>"
+    ]
+  },
+  {
+    "objectID": "oruxmaps/README.html#introduction",
+    "href": "oruxmaps/README.html#introduction",
+    "title": "2  OruxMaps",
+    "section": "",
+    "text": "&lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;\n&lt;onlinemapsources&gt;\n\n    &lt;onlinemapsource uid=\"1\"&gt;\n        &lt;name&gt;Geoplateforme IGN SCAN25&lt;/name&gt;\n        &lt;url&gt;&lt;![CDATA[https://data.geopf.fr/private/wmts?Service=WMTS&apikey=ign_scan_ws&LAYER=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR&Style=normal&TileMatrixSet=PM&Request=GetTile&Version=1.0.0&Format=image/jpeg&TileMatrix={$z}&TileCol={$x}&TileRow={$y}]]&gt;&lt;/url&gt;\n        &lt;website&gt;&lt;![CDATA[&lt;a href=\"https://www.ign.fr/geoplateforme\" target=\"_blank\"&gt;Géoplateforme IGN&lt;/a&gt;]]&gt;&lt;/website&gt;\n        &lt;minzoom&gt;2&lt;/minzoom&gt;\n        &lt;maxzoom&gt;16&lt;/maxzoom&gt;\n        &lt;projection&gt;MERCATORESFERICA&lt;/projection&gt;\n        &lt;servers&gt;&lt;/servers&gt;\n        &lt;httpparam name=\"User-Agent\"&gt;{om}&lt;/httpparam&gt;\n        &lt;cacheable&gt;1&lt;/cacheable&gt;\n        &lt;downloadable&gt;1&lt;/downloadable&gt;\n        &lt;maxtilesday&gt;0&lt;/maxtilesday&gt;\n        &lt;maxthreads&gt;0&lt;/maxthreads&gt;\n        &lt;xop&gt;&lt;/xop&gt;\n        &lt;yop&gt;&lt;/yop&gt;\n        &lt;zop&gt;&lt;/zop&gt;\n        &lt;qop&gt;&lt;/qop&gt;\n        &lt;sop&gt;&lt;/sop&gt;\n    &lt;/onlinemapsource&gt;\n\n    &lt;!-- autres entrées ici ... --&gt;\n\n&lt;/onlinemapsources&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>OruxMaps</span>"
+    ]
+  },
+  {
+    "objectID": "oruxmaps/README.html#tutoriel",
+    "href": "oruxmaps/README.html#tutoriel",
+    "title": "2  OruxMaps",
+    "section": "2.2 Tutoriel",
+    "text": "2.2 Tutoriel\n\nBranchez votre téléphone Android à votre ordinateur en mode transfert de fichiers ; identifiez le disque correspondant à votre appareil sous Ce PC :\n\n\n\n\npartage\n\n\n\nNaviguez jusqu’à Android en suivant l’exemple ci-dessous :\n\n\n\n\npartage\n\n\n\nPoursuivez la navigation dans le sous-dossier data pour arriver à Android/data/com.orux.oruxmapsDonate/ :\n\n\n\n\npartage\n\n\n\nEnfin, dans ce dossier, naviguez vers files/oruxmaps/mapfiles où se trouve onlinemapsources.xml :\n\n\n\n\npartage\n\n\n\nIl n’est pas conseillé de modifier ce fichier directement sur place ; faites deux copies (onlinemapsources.xml et onlinemapsources.xml.bak) de ce fichier à un endroit de votre choix, souvent le Bureau (Desktop). Effacez le fichier onlinemapsources.xml présent dans le dossier mapfiles de votre téléphone.\nOuvrez onlinemapsources.xml avec un éditeur (clic droit -&gt; Ouvrir avec… -&gt; choisir le Bloc-notes si vous n’avez pas d’éditeur de code), repérez la balise &lt;onlinemapsources&gt; et ajoutez les entrées de votre choix juste après cette ligne.\nVérifiez bien que toutes les entrées ont un uid différent de ceux déjà existants et que les balises sont correctement formées.\nSauvegardez onlinemapsources.xml et copiez-le dans le dossier files/oruxmaps/mapfiles du téléphone (veillez à bien avoir supprimé le fichier avant comme indiqué ci-dessus, coller par-dessus ne fonctionne pas ici).\nDébranchez votre téléphone, puis relancez OruxMaps sur le téléphone (forcer l’arrêt et relancer). Ouvrez l’application et testez les nouvelles cartes.\n\nLe fichier avec des entrées utiles se trouve ici ; en général pour une pratique en montagne, les trois premières cartes sont suffisantes (IGN SCAN25, IGN Pentes, IGN Courbes de niveau). Si vous le souhaitez, vous pouvez remplacer votre onlinemapsources.xml par celui-ci directement (la majorité des entrées présentes dans le fichier fourni par défaut avec OruxMaps sont inutiles pour un usage en France).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>OruxMaps</span>"
+    ]
+  },
+  {
+    "objectID": "oruxmaps/README.html#références",
+    "href": "oruxmaps/README.html#références",
+    "title": "2  OruxMaps",
+    "section": "2.3 Références",
+    "text": "2.3 Références\n\nForum OruxMaps\nTyber Randos",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>OruxMaps</span>"
+    ]
+  }
+]
