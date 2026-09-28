@@ -4,11 +4,11 @@ Ce répertoire contient des notes et des ressources pour l'ajout de cartes IGN s
 
 ## Introduction
 
-Pour ajouter des cartes IGN sur OruxMaps, il faut ajouter des entrées `<onlinemapsource>` au fichier `onlinemapsources.xml` à la racine du système Android. Cela est souvent problématique car il faut accéder des fichiers restreints dans son téléphone. Il est donc conseillé de le faire depuis un ordinateur avec le téléphone branché en mode de transfert de fichiers, où le système Android n'est pas capable d' empêcher l'accès à ces fichiers.
+Pour ajouter des cartes IGN sur OruxMaps, il nous faut ajouter des entrées `<onlinemapsource>` au fichier `onlinemapsources.xml` à la racine du système Android. Cela est souvent problématique car il faut accéder à des fichiers restreints sur son téléphone. Il est donc conseillé de le faire depuis un ordinateur avec le téléphone branché en mode de transfert de fichiers, où le système Android n'est pas en mesure d'empêcher l'accès à ces fichiers.
 
-Le fichier `onlinemapsources.xml` se trouve sous `Android/data/com.orux.oruxmapsDonate/files/oruxmaps/mapfiles` dans les configurations du logiciel. Un fichier XML est un fichier text avec des entrées (*tags*) qui structurent les données de façon à les rendre facilement lisibles par un logiciel quelconque. Étant un ficher text, nous pouvons utiliser le *Bloc Notes* classique de Windows pour le lire et modifier. Pour ceux plus à l'aise avec le monde de la programmation, un éditeur de code avec coloration syntaxique est préférable, permetant facilement l'identification des erreurs.
+Le fichier `onlinemapsources.xml` se trouve sous `Android/data/com.orux.oruxmapsDonate/files/oruxmaps/mapfiles` dans les configurations de l'application. Un fichier XML est un fichier texte avec des balises (*tags*) qui structurent les données de façon à les rendre facilement lisibles par un logiciel. Étant un fichier texte, nous pouvons utiliser le *Bloc-notes* classique de Windows pour le lire et le modifier. Pour les personnes plus à l'aise avec la programmation, un éditeur de code avec coloration syntaxique est préférable, permettant d'identifier facilement les erreurs.
 
-La structure de `onlinemapsources.xml` est très simple: en haut nous avons un *en-tête* `<?xml version="1.0" encoding="utf-8"?>` qui indique au logiciel le lisant qu'il s'agit d'un fichier XML et quel encodage utiliser. Ensuite nous avons une entrée *racine* `onlinemapsources` qui englobe toutes les autres entrées sous forme d'une liste. Nous pouvons ajouter des commentaires au fichier en englobant un bloc de text avec `<!-- ... -->`, tel qu'utilisé dans l'exemple ci-dessous.
+La structure de `onlinemapsources.xml` est très simple : en haut, nous avons un *en-tête* `<?xml version="1.0" encoding="utf-8"?>` qui indique au logiciel qui le lit qu'il s'agit d'un fichier XML et quel encodage utiliser. Ensuite, nous avons une balise *racine* `onlinemapsources` qui englobe toutes les autres entrées sous forme de liste. Nous pouvons ajouter des commentaires au fichier en encadrant un bloc de texte avec `<!-- ... -->`, comme dans l'exemple ci-dessous :
 
 
 ```xml
@@ -40,37 +40,37 @@ La structure de `onlinemapsources.xml` est très simple: en haut nous avons un *
 </onlinemapsources>
 ```
 
-Le plus important quand ajoutant des nouvelles entrées, ce'quel que ces cartes doivent avoir un identifiant (uid) différent chacune. La numérotation des `uid` est arbitraire (bonne pratique à suivre: utiliser une séquence de valeurs). Si vous le fusionnez avec un autre fichier, faire attention à adapter les `uid` au besoin, autrement OruxMaps ne pourrait pas les identifier et donc ne les afficherait pas.
+Le plus important lors de l'ajout de nouvelles entrées est que chaque carte doit avoir un identifiant (`uid`) unique. La numérotation des `uid` est arbitraire (bonne pratique : utiliser une suite d'entiers). Si vous le fusionnez avec un autre fichier, veillez à adapter les `uid` au besoin, sans quoi OruxMaps ne pourra pas les identifier et ne les affichera pas.
 
 ## Tutoriel
 
-1. Branchez votre téléphone Android à votre ordinateur en mode de partage de fichiers; identifiez le disque correspondant à votre appareil sous **Ce PC**:
+1. Branchez votre téléphone Android à votre ordinateur en mode transfert de fichiers ; identifiez le disque correspondant à votre appareil sous **Ce PC** :
 
 ![partage](media/step-01.png)
 
-2. Naviguez jusquà `Android` en suivant l'exemple ci-dessous:
+2. Naviguez jusqu'à `Android` en suivant l'exemple ci-dessous :
 
 ![partage](media/step-02.png)
 
-3. Poursuivez la navigation dans le sous-dossier `data` pour arriver à `Android/data/com.orux.oruxmapsDonate/`
+3. Poursuivez la navigation dans le sous-dossier `data` pour arriver à `Android/data/com.orux.oruxmapsDonate/` :
 
 ![partage](media/step-03.png)
 
-4. Finalement, dans ce dossier naviguez vers `files/oruxmaps/mapfiles` où se trouve `onlinemapsources.xml`.
+4. Enfin, dans ce dossier, naviguez vers `files/oruxmaps/mapfiles` où se trouve `onlinemapsources.xml` :
 
 ![partage](media/step-04.png)
 
-5. Il n'est pas possible/conseillé de modifier ce fichier sur place; faites deux copies (`onlinemapsources.xml` et `onlinemapsources.xml.bak`) de ce fichier à un endroit de votre choix, souvent le Desktop. Éffacez le fichier `onlinemapsources.xml` présent dans le dossier `mapfiles` de votre téléphone.
+5. Il n'est pas conseillé de modifier ce fichier directement sur place ; faites deux copies (`onlinemapsources.xml` et `onlinemapsources.xml.bak`) de ce fichier à un endroit de votre choix, souvent le Bureau (*Desktop*). Effacez le fichier `onlinemapsources.xml` présent dans le dossier `mapfiles` de votre téléphone.
 
-6. Ouvrez `onlinemapsources.xml` avec un éditeur (clic droit, ouvrir avec..., choisir Bloc Notes si vous n'avez pas un editeur de code), reperez la ligne `<onlinemapsources>` et ajoutez les entrées de votre choix juste après cette ligne.
+6. Ouvrez `onlinemapsources.xml` avec un éditeur (clic droit -> Ouvrir avec... -> choisir le Bloc-notes si vous n'avez pas d'éditeur de code), repérez la balise `<onlinemapsources>` et ajoutez les entrées de votre choix juste après cette ligne.
 
-7. Vérifiez bien que toutes les entrées ont un `uid` différent de ceux déjà existants et que les tags sont correctement formés.
+7. Vérifiez bien que toutes les entrées ont un `uid` différent de ceux déjà existants et que les balises sont correctement formées.
 
-8. Sauvegardez `onlinemapsources.xml` et copiez-le dans le dossier `files/oruxmaps/mapfiles` du téléphone (veillez à bien avoir supprimé le fichier avan comme indiqué ci-dessus, coller par dessus ne marche pas ici).
+8. Sauvegardez `onlinemapsources.xml` et copiez-le dans le dossier `files/oruxmaps/mapfiles` du téléphone (veillez à bien avoir supprimé le fichier avant comme indiqué ci-dessus, coller par-dessus ne fonctionne pas ici).
 
-9. Débranchez votre téléphone, relancez OruxMaps sur le téléphone (forcer l'arrêt et relancer). Ouvrez l'application et testez les nouvelles cartes.
+9. Débranchez votre téléphone, puis relancez OruxMaps sur le téléphone (forcer l'arrêt et relancer). Ouvrez l'application et testez les nouvelles cartes.
 
-Le fichier avec des entrées utiles se trouve [ici](onlinemapsources.xml); en général pour une pratique en montagne, les trois premières cartes sont suffisantes (IGN SCAN25, IGN Pentes, IGN Courbes de niveaux). Si vous voulez, vous pouvez remplacer votre `onlinemapsources.xml` par celui-ci directement (la majorité des entrées présentes sous le fichier fourni avec OruxMaps est inutile pour un usage en France).
+Le fichier avec des entrées utiles se trouve [ici](onlinemapsources.xml) ; en général pour une pratique en montagne, les trois premières cartes sont suffisantes (IGN SCAN25, IGN Pentes, IGN Courbes de niveau). Si vous le souhaitez, vous pouvez remplacer votre `onlinemapsources.xml` par celui-ci directement (la majorité des entrées présentes dans le fichier fourni par défaut avec OruxMaps sont inutiles pour un usage en France).
 
 ## Références
 
