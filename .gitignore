@@ -1,0 +1,6 @@
+# Quarto outputs:
+_book/
+
+# Quarto defaults (must be last):
+/.quarto/
+**/*.quarto_ipynb

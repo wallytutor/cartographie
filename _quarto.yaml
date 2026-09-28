@@ -1,0 +1,30 @@
+project:
+  type: book
+
+execute:
+  cache:   false
+  echo:    false
+  warning: false
+
+book:
+  title: "Cartographie"
+  author: "Walter Dal'Maz Silva"
+  date: "today"
+
+  sidebar:
+    style: "docked"
+    search: true
+    collapse-level: 2
+
+  chapters:
+    - index.md
+    - oruxmaps/README.md
+
+format:
+  html:
+    reference-location: document
+    highlight-style: github
+    theme:
+      - pulse
+
+  typst: default
